@@ -1,4 +1,9 @@
 cc_binary(
-  name = "hello_world",
+  name = "drill",
   srcs = ["hello_world.cc", "@ppp2code//file"],
+)
+
+cc_binary(
+  name = "ex1",
+  srcs = ["hello_programming.cc", "@ppp2code//file"],
 )
