@@ -67,3 +67,18 @@ cc_binary(
   name = "ex18",
   srcs = ["solve_quadratic_equation.cc", "@ppp2code//file"],
 )
+
+cc_binary(
+  name = "ex19",
+  srcs = ["read_scores.cc", "@ppp2code//file"],
+)
+
+cc_binary(
+  name = "ex20",
+  srcs = ["search_score.cc", "@ppp2code//file"],
+)
+
+cc_binary(
+  name = "ex21",
+  srcs = ["search_scorer.cc", "@ppp2code//file"],
+)
