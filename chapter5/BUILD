@@ -23,3 +23,13 @@ cc_binary(
   name = "ex7",
   srcs = ["solve_quadratic_equation.cc", "@ppp2code//file"],
 )
+
+cc_binary(
+  name = "ex9",
+  srcs = ["top_n_sum.cc", "@ppp2code//file"],
+)
+
+cc_binary(
+  name = "ex10",
+  srcs = ["top_n_sum_double.cc", "@ppp2code//file"],
+)
