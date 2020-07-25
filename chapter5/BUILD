@@ -33,3 +33,8 @@ cc_binary(
   name = "ex10",
   srcs = ["top_n_sum_double.cc", "@ppp2code//file"],
 )
+
+cc_binary(
+  name = "ex11",
+  srcs = ["fibonacci.cc", "@ppp2code//file"],
+)
