@@ -43,3 +43,8 @@ cc_binary(
   name = "ex13",
   srcs = ["bulls_and_cows.cc", "@ppp2code//file"],
 )
+
+cc_binary(
+  name = "ex14",
+  srcs = ["day_of_the_week.cc", "@ppp2code//file"],
+)
