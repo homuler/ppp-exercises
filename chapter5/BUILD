@@ -18,3 +18,8 @@ cc_binary(
   name = "ex6",
   srcs = ["celsius_and_fahrenheit.cc", "@ppp2code//file"],
 )
+
+cc_binary(
+  name = "ex7",
+  srcs = ["solve_quadratic_equation.cc", "@ppp2code//file"],
+)
