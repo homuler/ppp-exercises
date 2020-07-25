@@ -38,3 +38,8 @@ cc_binary(
   name = "ex11",
   srcs = ["fibonacci.cc", "@ppp2code//file"],
 )
+
+cc_binary(
+  name = "ex13",
+  srcs = ["bulls_and_cows.cc", "@ppp2code//file"],
+)
