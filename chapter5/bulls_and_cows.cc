@@ -1,12 +1,22 @@
 #include "external/ppp2code/file/std_lib_facilities.h"
 
-vector<int> generate_seq()
+vector<int> generate_seq(default_random_engine& engine)
 {
   vector<int> seq;
 
   for (int i = 0; i < 4; ++i)
   {
-    seq.push_back(randint(10));
+    int r = uniform_int_distribution<>{ 0, 9 - i }(engine);
+    int n = -1;
+
+    while (r >= 0)
+    {
+      --r;
+      ++n;
+      while (find(seq, n) != seq.end()) ++n;
+    }
+
+    seq.push_back(n);
   }
 
   return seq;
@@ -79,9 +89,8 @@ void run_game(vector<int>& seq)
       {
         cin >> n;
         guess.push_back(n - '0');
-
-        if (cin.fail()) reset_cin(cin);
       }
+      reset_cin(cin);
 
       validate_guess(guess);
     } catch (invalid_argument& e) {
@@ -102,13 +111,14 @@ int main()
 
   cout << "Please enter a seed integer (default = 0): ";
   cin >> seed;
-  srand(seed); // TODO: not working
+  srand(seed);
+  std::default_random_engine engine { seed };
 
   if (cin.fail()) reset_cin(cin);
 
   while (true)
   {
-    vector<int> seq = generate_seq();
+    vector<int> seq = generate_seq(engine);
 
     run_game(seq);
 
