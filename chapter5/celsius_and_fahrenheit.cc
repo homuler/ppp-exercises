@@ -3,7 +3,7 @@
 class Bad_temp {};
 
 constexpr double absolute_zero = -273.15;
-constexpr double esp = 1e-9;
+constexpr double eps = 1e-9;
 
 void throw_bad_temp()
 {
@@ -23,7 +23,7 @@ double ctof(double c, bool require_validation = false)
   {
     const double c_dash = ftoc(f, false);
 
-    if (abs(c_dash - c) >= esp)
+    if (abs(c_dash - c) > eps)
     {
       cerr << "The result might be wrong: " << c << "C = " << f << "F = " << c_dash << "C?" << endl;
     }
@@ -42,7 +42,7 @@ double ftoc(double f, bool require_validation = false)
   {
     const double f_dash = ctof(c, false);
 
-    if (abs(f_dash - f) >= esp)
+    if (abs(f_dash - f) > eps)
     { 
       cerr << "The result might be wrong: " << f << "F = " << c << "C = " << f_dash << "F?" << endl;
     }
